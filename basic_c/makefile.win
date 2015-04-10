@@ -1,0 +1,36 @@
+HOST_OS := win32
+HOST_REGSIZE := 32bit
+
+CC = gcc
+
+CFLAGS = -O2
+CFLAGS_win32_32bit = -I"C:\Intel\INDE\code_builder_5.0.0.43\include" 
+CFLAGS_win32_64bit = -I"C:\Intel\INDE\code_builder_5.0.0.43\include"
+CFLAGS += $(CFLAGS_$(HOST_OS)_$(HOST_REGSIZE))
+
+LFLAGS_win32_32bit = -L"C:\Intel\INDE\code_builder_5.0.0.43\lib\x86"
+LFLAGS_win32_64bit = -L"C:\Intel\INDE\code_builder_5.0.0.43\lib\x64"
+
+LFLAGS =
+LFLAGS += $(LFLAGS_$(HOST_OS)_$(HOST_REGSIZE))
+
+LIBS = -lOpenCL
+
+SRCS = hellocl.c
+
+OBJS = $(SRCS:.c=.o)
+
+# define the executable
+MAIN = hellocl
+
+all : $(MAIN)
+	@echo "Program hellocl has been generated"
+
+$(MAIN): $(OBJS)
+	$(CC) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+    
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
+    
+clean:
+	$(RM) *.o $(MAIN).exe
