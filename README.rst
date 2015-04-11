@@ -2,7 +2,8 @@
 HelloCL
 =======
 
-a repository for OpenCL programs that help get configurations working
+a repository for OpenCL programs that help people get their
+configurations working
 
 ===============  ==============================================================  ====================
 Host Language    Example                                                         Deployment OS
