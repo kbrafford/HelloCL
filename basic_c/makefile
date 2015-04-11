@@ -29,7 +29,7 @@ all : $(MAIN)
 	@echo "Program hellocl has been generated"
 
 $(MAIN): $(OBJS)
-	$(CC) -o $(MAIN) $(OBJS)$(LFLAGS) $(LIBS)
+	$(CC) -o $(MAIN) $(OBJS)$(LFLAGS)
 
 .c.o:
 	$(CC) $(CFLAGS)-c $< -o $@
