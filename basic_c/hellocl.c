@@ -4,7 +4,13 @@
  *
  *  TODO: find the original and make sure attributions are made
  *        and all permissions are being correctly followed
-*/
+ *
+ *   Just found it:
+
+https://www.olcf.ornl.gov/tutorials/opencl-vector-addition/#vecAdd.c
+
+ *
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
