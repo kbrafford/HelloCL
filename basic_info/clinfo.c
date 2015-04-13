@@ -8,7 +8,6 @@
  */
 
 #include <stdio.h>
-#include <malloc.h>
 #include <getopt.h>
 #include <stdlib.h>
 
