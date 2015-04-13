@@ -1,14 +1,21 @@
 /*
- *  This file started out as a sample I downloaded from either
- *  Intel, Apple, or some other source.
+ *  This program started out as a sample downloaded from
+ *  Oak Ridge National Laboratory
  *
- *  TODO: find the original and make sure attributions are made
- *        and all permissions are being correctly followed
+ *  https://www.olcf.ornl.gov/tutorials/opencl-vector-addition/
  *
- *   Just found it:
-
-https://www.olcf.ornl.gov/tutorials/opencl-vector-addition/#vecAdd.c
-
+ *  The original program came with this documentation:
+ *
+ *     This sample shows a minimal conversion from our vector 
+ *     addition CPU code to an OpenCL version, consider this a
+ *     OpenCL 'Hello World'. Error handling is not included so
+ *     that the structure of the code is more digestible. The
+ *     full source can be viewed or downloaded from the OLCF
+ *     GitHub. Please direct any questions or comments to
+ *     help@nccs.gov
+ *
+ *  Thank you Oak Ridge National Lab for the nifty demo!
+ *                                                  -- krb
  *
  */
 
