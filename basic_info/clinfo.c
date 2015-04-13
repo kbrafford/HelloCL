@@ -11,7 +11,11 @@
 #include <getopt.h>
 #include <stdlib.h>
 
-#include "CL/cl.h"
+#ifdef __APPLE__
+#include <OpenCL/opencl.h>
+#else
+#include <CL/cl.h>
+#endif
 
 #define Warning(...)    fprintf(stderr, __VA_ARGS__)
 
