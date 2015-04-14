@@ -39,25 +39,25 @@ CFLAGS +=$(CFLAGS_$(HOST_OS)_$(HOST_REGSIZE))
 LFLAGS =
 LFLAGS_darwin_32bit =-framework OpenCL
 LFLAGS_darwin_64bit =-framework OpenCL
-LFLAGS_linux2_32bit =-lOpenCL -lm -L/opt/AMDAPPSDK-2.9-1/lib/x86/
-LFLAGS_linux2_64bit =-lOpenCL -lm -L/opt/AMDAPPSDK-2.9-1/lib/x86_64/
-LFLAGS_win32_32bit = -L"C:\Intel\INDE\code_builder_5.0.0.43\lib\x86" -lOpenCL
-LFLAGS_win32_64bit = -L"C:\Intel\INDE\code_builder_5.0.0.43\lib\x64" -lOpenCL
+LFLAGS_linux2_32bit =-lOpenCL -lm -L/opt/AMDAPPSDK-2.9-1/lib/x86
+LFLAGS_linux2_64bit =-lOpenCL -lm -L/opt/AMDAPPSDK-2.9-1/lib/x86_64
+LFLAGS_win32_32bit =-L"C:\Intel\INDE\code_builder_5.0.0.43\lib\x86" -lOpenCL
+LFLAGS_win32_64bit =-L"C:\Intel\INDE\code_builder_5.0.0.43\lib\x64" -lOpenCL
 
 LFLAGS += $(LFLAGS_$(HOST_OS)_$(HOST_REGSIZE))
 
-SRCS = clinfo.c
+SRCS = hellocl.c
 
 OBJS = $(SRCS:.c=.o)
 
 # define the executable
-MAIN = clinfo
+MAIN = hellocl
 
 all : $(MAIN)
-	@echo "Program clinfo has been generated"
+	@echo "Program hellocl has been generated"
 
 $(MAIN): $(OBJS)
-	$(CC) -o $(MAIN) $(OBJS)$(LFLAGS)
+	$(CC) -o $(MAIN) $(OBJS) $(LFLAGS)
 
 .c.o:
 	$(CC) $(CFLAGS)-c $< -o $@
