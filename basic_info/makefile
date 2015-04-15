@@ -46,15 +46,15 @@ LFLAGS_win32_64bit =-L"C:\Intel\INDE\code_builder_5.0.0.43\lib\x64" -lOpenCL
 
 LFLAGS += $(LFLAGS_$(HOST_OS)_$(HOST_REGSIZE))
 
-SRCS = hellocl.c
+SRCS = clinfo.c
 
 OBJS = $(SRCS:.c=.o)
 
 # define the executable
-MAIN = hellocl
+MAIN = clinfo
 
 all : $(MAIN)
-	@echo "Program hellocl has been generated"
+	@echo "Program clinfo has been generated"
 
 $(MAIN): $(OBJS)
 	$(CC) -o $(MAIN) $(OBJS) $(LFLAGS)
