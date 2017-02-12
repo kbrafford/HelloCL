@@ -31,8 +31,8 @@ CFLAGS_darwin_32bit =
 CFLAGS_darwin_64bit =
 CFLAGS_linux2_32bit =
 CFLAGS_linux2_64bit =
-CFLAGS_win32_32bit = -I"C:\Intel\INDE\code_builder_5.0.0.43\include" 
-CFLAGS_win32_64bit = -I"C:\Intel\INDE\code_builder_5.0.0.43\include"
+CFLAGS_win32_32bit = -I"..\tools_intel_win\include" 
+CFLAGS_win32_64bit = -I"..\tools_intel_win\include"
 
 CFLAGS +=$(CFLAGS_$(HOST_OS)_$(HOST_REGSIZE))
 
@@ -41,8 +41,8 @@ LFLAGS_darwin_32bit =-framework OpenCL
 LFLAGS_darwin_64bit =-framework OpenCL
 LFLAGS_linux2_32bit =-lOpenCL -lm -L/opt/AMDAPPSDK-2.9-1/lib/x86
 LFLAGS_linux2_64bit =-lOpenCL -lm -L/opt/AMDAPPSDK-2.9-1/lib/x86_64
-LFLAGS_win32_32bit =-L"C:\Intel\INDE\code_builder_5.0.0.43\lib\x86" -lOpenCL
-LFLAGS_win32_64bit =-L"C:\Intel\INDE\code_builder_5.0.0.43\lib\x64" -lOpenCL
+LFLAGS_win32_32bit =-L"..\tools_intel_win\lib\x86" -lOpenCL
+LFLAGS_win32_64bit =-L"..\tools_intel_win\lib\x64" -lOpenCL
 
 LFLAGS += $(LFLAGS_$(HOST_OS)_$(HOST_REGSIZE))
 
