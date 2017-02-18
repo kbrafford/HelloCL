@@ -29,8 +29,8 @@ CC = gcc
 CFLAGS =-std=c99 -O2
 CFLAGS_darwin_32bit =
 CFLAGS_darwin_64bit =
-CFLAGS_linux2_32bit =
-CFLAGS_linux2_64bit =
+CFLAGS_linux2_32bit = -I"../tools_intel_win/include"
+CFLAGS_linux2_64bit = -I"../tools_intel_win/include"
 CFLAGS_win32_32bit = -I"..\tools_intel_win\include" 
 CFLAGS_win32_64bit = -I"..\tools_intel_win\include"
 
@@ -40,7 +40,7 @@ LFLAGS =
 LFLAGS_darwin_32bit =-framework OpenCL
 LFLAGS_darwin_64bit =-framework OpenCL
 LFLAGS_linux2_32bit =-lOpenCL -lm -L/opt/AMDAPPSDK-2.9-1/lib/x86
-LFLAGS_linux2_64bit =-lOpenCL -lm -L/opt/AMDAPPSDK-2.9-1/lib/x86_64
+LFLAGS_linux2_64bit =-lOpenCL -lm -L/opt/AMDAPPSDK/opt/intel/opencl-1.2-6.4.0.25/lib64/-2.9-1/lib/x86_64
 LFLAGS_win32_32bit =-L"..\tools_intel_win\lib\x86" -lOpenCL
 LFLAGS_win32_64bit =-L"..\tools_intel_win\lib\x64" -lOpenCL
 
@@ -60,7 +60,7 @@ $(MAIN): $(OBJS)
 	$(CC) -o $(MAIN) $(OBJS) $(LFLAGS)
 
 .c.o:
-	$(CC) $(CFLAGS)-c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 ifeq ($(OS),Windows_NT)
