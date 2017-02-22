@@ -39,8 +39,8 @@ CFLAGS +=$(CFLAGS_$(HOST_OS)_$(HOST_REGSIZE))
 LFLAGS =
 LFLAGS_darwin_32bit =-framework OpenCL
 LFLAGS_darwin_64bit =-framework OpenCL
-LFLAGS_linux2_32bit =-lOpenCL -lm -L/opt/AMDAPPSDK-2.9-1/lib/x86
-LFLAGS_linux2_64bit =-lOpenCL -lm -L/opt/AMDAPPSDK/opt/intel/opencl-1.2-6.4.0.25/lib64/-2.9-1/lib/x86_64
+LFLAGS_linux2_32bit =-lOpenCL -lm -L../tools_intel_win/lib/x86
+LFLAGS_linux2_64bit =-lOpenCL -lm -L/opt/intel/opencl/lib64/
 LFLAGS_win32_32bit =-L"..\tools_intel_win\lib\x86" -lOpenCL
 LFLAGS_win32_64bit =-L"..\tools_intel_win\lib\x64" -lOpenCL
 
